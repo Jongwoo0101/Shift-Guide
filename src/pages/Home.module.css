@@ -1,0 +1,99 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 52px;
+  padding: 40px 20px;
+}
+
+.deco {
+  position: absolute;
+  font-size: 180px;
+  opacity: 0.025;
+  user-select: none;
+  pointer-events: none;
+}
+.deco1 { top: 5%;    left: -2%; }
+.deco2 { bottom: 5%; right: -2%; }
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--caramel);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 8vw, 80px);
+  line-height: 1.0;
+  text-align: center;
+  color: var(--foam);
+}
+.title em {
+  font-style: italic;
+  color: var(--caramel);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(245,237,227,0.5);
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.btnRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 40px;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.3px;
+}
+.btnIcon { font-size: 20px; line-height: 1; }
+
+.btnHot {
+  background: linear-gradient(135deg, var(--mocha), var(--caramel));
+  color: white;
+  box-shadow: 0 8px 32px rgba(196,125,62,0.35);
+}
+.btnHot:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(196,125,62,0.45);
+}
+
+.btnIce {
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+  color: white;
+  box-shadow: 0 8px 32px rgba(45,102,128,0.4);
+}
+.btnIce:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(45,102,128,0.5);
+}
+
+.btnWork {
+  background: rgba(245,237,227,0.10);
+  color: var(--cream);
+  border: 1.5px solid rgba(245,237,227,0.20);
+}
+.btnWork:hover {
+  transform: translateY(-3px);
+  background: rgba(245,237,227,0.18);
+}
