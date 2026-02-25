@@ -33,6 +33,7 @@
   color: var(--foam);
 }
 
+/* 배지: data-theme 토큰을 그대로 사용 */
 .badge {
   font-size: 11px;
   font-weight: 600;
@@ -40,11 +41,15 @@
   text-transform: uppercase;
   padding: 5px 14px;
   border-radius: var(--radius-pill);
+  background: var(--cat-badge-bg);
+  color: var(--cat-badge-color);
 }
 
-.badgeHot  { background: rgba(196,125,62,0.2);  color: var(--caramel);   }
-.badgeIce  { background: rgba(45,102,128,0.3);  color: var(--blue-light);}
-.badgeWork { background: rgba(245,237,227,0.1); color: var(--cream);     }
+/* work 페이지용 (category 없이 직접 사용할 때) */
+.badgeWork {
+  background: rgba(245,237,227,0.1);
+  color: var(--cream);
+}
 
 @media (max-width: 480px) {
   .nav { padding: 16px 18px; }

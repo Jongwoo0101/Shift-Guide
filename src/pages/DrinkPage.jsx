@@ -1,11 +1,11 @@
 import { useState, useMemo } from 'react'
-import PageNav  from '../components/PageNav.jsx'
-import QuizBar  from '../components/QuizBar.jsx'
+import PageNav   from '../components/PageNav.jsx'
+import QuizBar   from '../components/QuizBar.jsx'
 import DrinkCard from '../components/DrinkCard.jsx'
 import { useQuiz } from '../hooks/useQuiz.js'
 import styles from './DrinkPage.module.css'
 
-export default function DrinkPage({ type, drinks, onBack }) {
+export default function DrinkPage({ category, drinks, onBack }) {
   const [query, setQuery] = useState('')
   const { active, toggle, reveal, isRevealed } = useQuiz()
 
@@ -15,8 +15,9 @@ export default function DrinkPage({ type, drinks, onBack }) {
   }, [query, drinks])
 
   return (
-    <div className={styles.page}>
-      <PageNav type={type} onBack={onBack} />
+    // data-theme으로 카테고리 색상 토큰 활성화
+    <div className={styles.page} data-theme={category.theme}>
+      <PageNav category={category} onBack={onBack} />
 
       <div className={styles.searchWrap}>
         <input

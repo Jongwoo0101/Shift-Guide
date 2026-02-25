@@ -1,19 +1,6 @@
 import styles from './PageNav.module.css'
 
-const BADGE = {
-  hot:  { cls: styles.badgeHot,  label: 'HOT'  },
-  ice:  { cls: styles.badgeIce,  label: 'ICED' },
-  work: { cls: styles.badgeWork, label: 'WORK' },
-}
-
-const TITLE = {
-  hot:  '🔥 Hot',
-  ice:  '🧊 Iced',
-  work: '📋 업무순서',
-}
-
-export default function PageNav({ type, onBack }) {
-  const badge = BADGE[type]
+export default function PageNav({ category, onBack }) {
   return (
     <nav className={styles.nav}>
       <button className={styles.backBtn} onClick={onBack}>
@@ -22,8 +9,15 @@ export default function PageNav({ type, onBack }) {
         </svg>
         홈
       </button>
-      <span className={styles.title}>{TITLE[type]}</span>
-      <span className={`${styles.badge} ${badge.cls}`}>{badge.label}</span>
+
+      <span className={styles.title}>
+        {category.icon} {category.label}
+      </span>
+
+      {/* 배지 색상도 data-theme 토큰으로 자동 적용 */}
+      <span className={styles.badge} data-theme={category.theme}>
+        {category.label.toUpperCase()}
+      </span>
     </nav>
   )
 }

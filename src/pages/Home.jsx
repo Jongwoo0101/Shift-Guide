@@ -5,7 +5,7 @@ const fadeUp = (delay) => ({
   animation: `fadeUp 0.6s ${delay}s forwards`,
 })
 
-export default function Home({ onNavigate }) {
+export default function Home({ categories, onNavigate }) {
   return (
     <div className={styles.home}>
       <span className={`${styles.deco} ${styles.deco1}`}>☕</span>
@@ -20,17 +20,34 @@ export default function Home({ onNavigate }) {
       </h1>
 
       <p className={styles.subtitle} style={fadeUp(0.4)}>
-        원종우 님의 레시피와 업무 순서를 한눈에 확인하세요
+        레시피와 업무 순서를 한눈에 확인하세요
       </p>
 
       <div className={styles.btnRow} style={fadeUp(0.55)}>
-        <button className={`${styles.btn} ${styles.btnHot}`} onClick={() => onNavigate('hot')}>
-          <span className={styles.btnIcon}>🔥</span> Hot
-        </button>
-        <button className={`${styles.btn} ${styles.btnIce}`} onClick={() => onNavigate('ice')}>
-          <span className={styles.btnIcon}>🧊</span> Iced
-        </button>
-        <button className={`${styles.btn} ${styles.btnWork}`} onClick={() => onNavigate('work')}>
+        {/* 음료 카테고리 — menu.json의 categories 배열에서 동적으로 생성 */}
+        {categories.map((cat, i) => (
+          <button
+            key={cat.id}
+            className={styles.btn}
+            data-theme={cat.theme}
+            style={{
+              background: `linear-gradient(135deg, var(--cat-from), var(--cat-to))`,
+              boxShadow: `0 8px 32px var(--cat-shadow)`,
+              animationDelay: `${0.55 + i * 0.08}s`,
+            }}
+            onClick={() => onNavigate(cat.id)}
+          >
+            <span className={styles.btnIcon}>{cat.icon}</span>
+            {cat.label}
+          </button>
+        ))}
+
+        {/* 업무순서는 항상 고정 */}
+        <button
+          className={`${styles.btn} ${styles.btnWork}`}
+          style={fadeUp(0.55 + categories.length * 0.08)}
+          onClick={() => onNavigate('work')}
+        >
           <span className={styles.btnIcon}>📋</span> 업무순서
         </button>
       </div>

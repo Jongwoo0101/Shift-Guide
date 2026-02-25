@@ -11,7 +11,7 @@ import styles from './WorkPage.module.css'
 export default function WorkPage({ onBack }) {
   return (
     <div className={styles.page}>
-      <PageNav type="work" onBack={onBack} />
+      <PageNav category={{ id: "work", label: "업무순서", icon: "📋", theme: "work" }} onBack={onBack} />
 
       <div className={styles.container}>
 
