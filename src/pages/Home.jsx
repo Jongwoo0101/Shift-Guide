@@ -20,7 +20,7 @@ export default function Home({ categories, onNavigate }) {
       </h1>
 
       <p className={styles.subtitle} style={fadeUp(0.4)}>
-        레시피와 업무 순서를 한눈에 확인하세요
+        원종우 님의 업무 순서와 레시피를 한눈에 확인하세요
       </p>
 
       <div className={styles.btnRow} style={fadeUp(0.55)}>
