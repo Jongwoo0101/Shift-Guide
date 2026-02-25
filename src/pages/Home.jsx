@@ -33,6 +33,7 @@ export default function Home({ categories, onNavigate }) {
             style={{
               background: `linear-gradient(135deg, var(--cat-from), var(--cat-to))`,
               boxShadow: `0 8px 32px var(--cat-shadow)`,
+              filter: 'brightness(1.15)',
               animationDelay: `${0.55 + i * 0.08}s`,
             }}
             onClick={() => onNavigate(cat.id)}

@@ -65,6 +65,7 @@
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   letter-spacing: 0.3px;
+  color: white;
 }
 .btnIcon { font-size: 20px; line-height: 1; }
 

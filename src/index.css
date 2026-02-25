@@ -88,30 +88,30 @@ body::before {
 /* ── Category theme tokens ── */
 /* theme 값이 data-theme 속성으로 전달되어 색상이 자동 적용됨 */
 [data-theme="hot"] {
-  --cat-from:   #6b3a2a;
-  --cat-to:     #c47d3e;
-  --cat-shadow: rgba(196,125,62,0.35);
+  --cat-from:   #a0542e;
+  --cat-to:     #e8954a;
+  --cat-shadow: rgba(232,149,74,0.55);
   --cat-badge-bg: rgba(196,125,62,0.2);
   --cat-badge-color: #c47d3e;
 }
 [data-theme="ice"] {
-  --cat-from:   #1a3a4a;
-  --cat-to:     #2d6680;
-  --cat-shadow: rgba(45,102,128,0.4);
+  --cat-from:   #1e5470;
+  --cat-to:     #3d8baa;
+  --cat-shadow: rgba(61,139,170,0.55);
   --cat-badge-bg: rgba(45,102,128,0.3);
   --cat-badge-color: #7ab8ce;
 }
 [data-theme="blended"] {
-  --cat-from:   #3a1a4a;
-  --cat-to:     #7b3fa0;
-  --cat-shadow: rgba(123,63,160,0.4);
+  --cat-from:   #622d8a;
+  --cat-to:     #9d55c8;
+  --cat-shadow: rgba(157,85,200,0.55);
   --cat-badge-bg: rgba(123,63,160,0.25);
   --cat-badge-color: #c084e0;
 }
 [data-theme="tea"] {
-  --cat-from:   #1a3a2a;
-  --cat-to:     #2d7a4a;
-  --cat-shadow: rgba(45,122,74,0.4);
+  --cat-from:   #1e6640;
+  --cat-to:     #38a05e;
+  --cat-shadow: rgba(56,160,94,0.55);
   --cat-badge-bg: rgba(45,122,74,0.25);
   --cat-badge-color: #6dbf8a;
 }
