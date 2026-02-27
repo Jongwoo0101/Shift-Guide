@@ -41,7 +41,7 @@ npm run build
 npm run preview
 ```
 
-## 메뉴 수정 (`src/data/menu.json`)
+## 메뉴 수정 (`src/data/menu.json` 직접추가해야함(프렌차이즈 카페 보안상 레시피 공개 불가))
 
 ### 전체 구조
 
