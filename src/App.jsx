@@ -1,17 +1,26 @@
 import { useState } from 'react'
+import { useAuth }  from './hooks/useAuth.js'
+import Login     from './pages/Login.jsx'
 import Home      from './pages/Home.jsx'
 import DrinkPage from './pages/DrinkPage.jsx'
 import WorkPage  from './pages/WorkPage.jsx'
 import menuData  from './data/menu.json'
 
 export default function App() {
+  const { authed, login, logout, error } = useAuth()
   const [page, setPage] = useState('home')
+
+  // 로그인 안 됐으면 로그인 페이지만 보여줌
+  if (!authed) {
+    return <Login onLogin={login} error={error} />
+  }
 
   if (page === 'home') {
     return (
       <Home
         categories={menuData.categories}
         onNavigate={setPage}
+        onLogout={logout}
       />
     )
   }
@@ -20,7 +29,6 @@ export default function App() {
     return <WorkPage onBack={() => setPage('home')} />
   }
 
-  // 나머지는 모두 음료 카테고리 페이지
   const category = menuData.categories.find(c => c.id === page)
   if (category) {
     return (
